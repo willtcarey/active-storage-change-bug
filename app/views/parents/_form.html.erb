@@ -1,0 +1,27 @@
+<%= form_with(model: parent, local: true) do |form| %>
+  <% if parent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
+
+      <ul>
+        <% parent.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.fields_for :children do |cf| %>
+    <%= cf.hidden_field :id %>
+    <div>
+      <% if cf.object.file.attached? %>
+        <%= link_to cf.object.file.filename, cf.object.file %>
+      <% end %>
+      <%= cf.file_field :file %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

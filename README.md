@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+- Create the database tables using `rails db:migrate`
+- Run webpack using `bin/webpack`
+- Run this application using `rails server`
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Navigate to `localhost:3000` in your browser
+- Create a new "parent", fill out as many or as few of the file fields as you wish
+- Once you have saved the parent, edit it and try to change any of the files. None of the files will ever update!
